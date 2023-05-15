@@ -16,36 +16,6 @@ public class CollectionsDemo2 {
         public static <T> void swap(List<?> list, int i, int j)         交换集合中指定位置的元素
      */
 
-
-        System.out.println("-------------sort默认规则--------------------------");
-        //默认规则，需要重写Comparable接口compareTo方法。Integer已经实现，按照从小打大的顺序排列
-        //如果是自定义对象，需要自己指定规则
-        ArrayList<Integer> list1 = new ArrayList<>();
-        Collections.addAll(list1, 10, 1, 2, 4, 8, 5, 9, 6, 7, 3);
-        Collections.sort(list1);
-        System.out.println(list1);
-
-
-        System.out.println("-------------sort自己指定规则规则--------------------------");
-        Collections.sort(list1, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o2 - o1;
-            }
-        });
-        System.out.println(list1);
-
-        Collections.sort(list1, (o1, o2) -> o2 - o1);
-        System.out.println(list1);
-
-        System.out.println("-------------binarySearch--------------------------");
-        //需要元素有序
-        ArrayList<Integer> list2 = new ArrayList<>();
-        Collections.addAll(list2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        System.out.println(Collections.binarySearch(list2, 9));
-        System.out.println(Collections.binarySearch(list2, 1));
-        System.out.println(Collections.binarySearch(list2, 20));
-
         System.out.println("-------------copy--------------------------");
         //把list3中的元素拷贝到list4中
         //会覆盖原来的元素
